@@ -1,0 +1,268 @@
+a {
+    color: #ffffff;
+    transition: 0.4s;
+    &:hover {
+        color: #ffba27;
+    }
+}
+
+.logo {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    .img_wrap {
+        width: 100%;
+        padding-top: calc(6 / 8 * 100%);
+    }
+}
+.banner {
+    .flexbox {
+        @include breakpoint(xs) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .logo {
+        margin-right: 25px;
+        @include breakpoint(xs) {
+            margin-right: 10px;
+            max-width: 180px;
+        }
+    }
+    padding: 30px 0;
+    width: 100%;
+    height: 75vh;
+    min-height: 350px;
+    background-image: url("../img/fon.jpg");
+    position: relative;
+    // &::after {
+    //     pointer-events: none;
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 20%;
+    //     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    // }
+    @include breakpoint(xs) {
+        height: initial;
+    }
+
+    .heder_info {
+        width: calc(100% - 180px);
+        @include breakpoint(xs) {
+            width: 100%;
+        }
+    }
+    .text {
+        @include fz(20, 10);
+        font-family: "Open sans";
+        text-align: center;
+        padding: 20px;
+        border-radius: 30px;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+.deco_element,
+.masters_inner {
+    position: relative;
+    &::after,
+    &::before {
+        content: "";
+        pointer-events: none;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        z-index: 2;
+        @include breakpoint(md-down) {
+            content: none;
+        }
+    }
+}
+
+.masters_inner {
+    &::after {
+        top: -40px;
+        left: -30px;
+        background-image: url("../img/svg/ramka.svg");
+        transform: rotate(0deg);
+    }
+    &::before {
+        top: -40px;
+        right: -30px;
+        background-image: url("../img/svg/ramka.svg");
+        transform: rotate(90deg);
+    }
+}
+.deco_element {
+    &::after {
+        bottom: 10px;
+        left: -30px;
+        background-image: url("../img/svg/ramka.svg");
+        transform: rotate(270deg);
+    }
+    &::before {
+        bottom: 10px;
+        right: -30px;
+        background-image: url("../img/svg/ramka.svg");
+        transform: rotate(180deg);
+    }
+}
+.masters_inner {
+    margin-bottom: 60px;
+    .master_item {
+        &.top-master {
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 75px;
+                height: 75px;
+                background-image: url("../img/top_master.webp");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                transform: translate(15%, -50%);
+            }
+        }
+        cursor: zoom-in;
+        width: calc(100% / 3 - 20px);
+        @include breakpoint(md-down) {
+            width: calc(100% / 2 - 20px);
+        }
+        @include breakpoint(md-down) {
+            width: calc(100% / 1 - 0px);
+        }
+        position: relative;
+        margin: 0 auto 50px;
+        border: 1px solid #ffba27;
+        transition: box-shadow 0.5s;
+        max-width: 350px;
+        &:hover {
+            box-shadow: 0 0 24px 3px rgb(255 186 39 / 40%);
+        }
+        .img_warp {
+            padding-top: 117%;
+            img {
+                width: calc(100% - 2px);
+                height: calc(100% - 2px);
+            }
+        }
+        .number_block {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #222222;
+            cursor: pointer;
+        }
+        .info_block {
+            padding: 20px 70px 35px 35px;
+            background-color: #000000;
+            .main_info {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            .info_title,
+            .info_text {
+                font-family: "Open Sans";
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            .info_text {
+                font-weight: 600;
+            }
+        }
+    }
+}
+.hr-logo {
+    margin-bottom: 30px;
+}
+
+.programs_section {
+    padding: 40px 0;
+
+    .programs_inner {
+        margin: 0 -10px;
+        .item {
+            width: calc(100% / 4 - 20px);
+            margin: 0 10px 30px;
+
+            .img_item {
+                width: 100%;
+                border: 1px solid #ffba27;
+                .img_wrap {
+                    padding-top: calc(259 / 264 * 100%);
+                }
+            }
+            .title {
+                @include fz(28, 20);
+                margin: 10px 0 5px;
+            }
+            .text {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            .row_text {
+                display: flex;
+                border: 1px solid #ffba27;
+                .column {
+                    font-family: "Open Sans";
+                    font-weight: 600;
+                    font-size: 18px;
+                    width: 50%;
+                    text-align: center;
+                    padding: 10px;
+                    & + .column {
+                        border-left: 1px solid #ffba27;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    border-top: 1px solid #ffba27;
+    padding: 50px 0;
+    .container {
+        max-width: 700px;
+    }
+    .footer_row {
+        @include breakpoint(xs) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .f_item {
+        @include breakpoint(xs) {
+            margin-bottom: 30px;
+        }
+    }
+    .img_wrap {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        border: 1px solid #ffba27;
+        padding: 12px;
+    }
+    .f_title {
+        font-weight: 600;
+        @include fz(20, 18);
+        margin-bottom: 10px;
+    }
+    .f_text {
+        font-weight: 600;
+        @include fz(16, 14);
+        & + .f_text {
+            margin-top: 10px;
+        }
+    }
+}
