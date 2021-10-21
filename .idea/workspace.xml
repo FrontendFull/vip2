@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4925215c-9070-4501-a103-1a35f0755d1f" name="Changes" comment="" />
+    <list default="true" id="4925215c-9070-4501-a103-1a35f0755d1f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,10 +42,24 @@
       <workItem from="1634759420620" duration="1043000" />
       <workItem from="1634760602285" duration="314000" />
       <workItem from="1634761006611" duration="80000" />
+      <workItem from="1634796233634" duration="846000" />
+      <workItem from="1634804380310" duration="7000" />
     </task>
+    <task id="LOCAL-00001" summary="img">
+      <created>1634796481405</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1634796481405</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="img" />
+    <option name="LAST_COMMIT_MESSAGE" value="img" />
   </component>
 </project>

@@ -1,22 +1,41 @@
 
 window.onload = function () {
     let item = document.querySelector('.none')
-    console.log(item)
     for (let i = 1; i <= 48; i++) {
         for (let j = 2; j <= 3; j++) {
             item.insertAdjacentHTML('beforeend', `<div className="img_warp object-fit " data-fancybox="girl-${i}" data-src="img/girls/big/${i}-${j}.jpg"></div>`)
         }
     }
+    map();
+
+
+    for (let anchor of document.querySelectorAll('.menu_link')) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault()
+            const blockID = anchor.getAttribute('href')
+            document.querySelector(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        })
+    }
+
+
 };
 
-onscroll = function(){
-	var scrollHeight = Math.max(
-		document.body.scrollHeight, document.documentElement.scrollHeight,
-		document.body.offsetHeight, document.documentElement.offsetHeight,
-		document.body.clientHeight, document.documentElement.clientHeight
-	);
-
-	if(window.scrollY+1 >= scrollHeight - innerHeight) ym(85778482, 'reachGoal', 'user-footer');
+window.onresize = function () {
+    map();
 };
+
+// window.addEventListener('scroll', function () {
+//     window.pageYOffset > 10 ? document.querySelector('.menu_wrap').classList.add('scroll') : document.querySelector('.header').classList.remove('scroll');
+// });
+
+function map() {
+    for (const item of document.querySelectorAll('iframe')) {
+        item.style.height = item.offsetWidth + 'px';
+    }
+}
+
 
 
