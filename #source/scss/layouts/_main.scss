@@ -99,6 +99,10 @@ a {
         }
     }
     .btn_close {
+        display: none;
+        @include breakpoint(sm-down) {
+            display: block;
+        }
         width: 30px;
         height: 30px;
         position: absolute;
