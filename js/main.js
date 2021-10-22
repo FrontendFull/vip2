@@ -1,5 +1,18 @@
 
 window.onload = function () {
+
+    document.querySelector(".btn_open").addEventListener('click', function () {
+        document.querySelector(".menu_list").classList.add('active');
+    })
+
+    for (const item of document.querySelectorAll(".menu_list .btn_close,.menu_list .menu_link")) {
+
+        item.addEventListener('click', function (e) {
+            document.querySelector(".menu_list").classList.remove('active');
+        })
+    }
+
+
     let item = document.querySelector('.none')
     for (let i = 1; i <= 48; i++) {
         for (let j = 2; j <= 3; j++) {

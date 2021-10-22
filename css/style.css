@@ -549,10 +549,10 @@ a:hover {
   position: absolute;
   right: 30px;
   top: 50%;
-  height: 30px;
+  height: 25px;
   width: 40px;
   transform: translateY(-50%);
-  background-color: #ffba27;
+  cursor: pointer;
 }
 @media (max-width: 1024px) {
   .menu_wrap .btn_open {
@@ -563,6 +563,49 @@ a:hover {
   .menu_wrap .btn_open {
     display: block;
   }
+}
+.menu_wrap .btn_open span, .menu_wrap .btn_open::after, .menu_wrap .btn_open::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #ffba27;
+  left: 0;
+}
+.menu_wrap .btn_open span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu_wrap .btn_open::after {
+  top: 0;
+}
+.menu_wrap .btn_open::before {
+  bottom: 0;
+}
+.menu_wrap .btn_close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.menu_wrap .btn_close::after, .menu_wrap .btn_close::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #ffba27;
+  transform: translate(-50%, -50%);
+}
+.menu_wrap .btn_close::after {
+  width: 100%;
+  height: 2px;
+}
+.menu_wrap .btn_close::before {
+  width: 2px;
+  height: 100%;
 }
 .menu_wrap .menu_list {
   display: flex;
@@ -579,6 +622,11 @@ a:hover {
     padding: 50px;
     background-color: #111111;
     transform: translateX(110%);
+    z-index: 10;
+    transition: 0.5s;
+  }
+  .menu_wrap .menu_list.active {
+    transform: translateX(0);
   }
 }
 @media (hover: none) and (pointer: coarse) {
@@ -591,6 +639,11 @@ a:hover {
     padding: 50px;
     background-color: #111111;
     transform: translateX(110%);
+    z-index: 10;
+    transition: 0.5s;
+  }
+  .menu_wrap .menu_list.active {
+    transform: translateX(0);
   }
 }
 .menu_wrap .menu_list .menu_item {
